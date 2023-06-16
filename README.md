@@ -1,6 +1,11 @@
 # debank-badge-minter
 
-Минтер баджей на дебанке
+**With love for : https://t.me/swiper_tools**
+
+**Приобрести бота на ZkSync / LayerZero можно тут: https://t.me/swipersoft_bot**
+
+**DEV           : https://t.me/lang_crypto**
+
 
 # Features
 
@@ -27,8 +32,20 @@ RUN_THREAD_TIMEOUT = [5, 10] # отвечает за задержкой межд
 
 По поводу прокси. Их в целом можно и не загружать (просто файлик оставить пустым). Но осторожней, дебанк любит рейтлимитать за большое кол-во запросов / плохие прокси
 
-**With love for : https://t.me/swiper_tools**
+### How to run script
+1. Устанавливаем Python: https://www.python.org/downloads/, я использую версию 3.9.8
+2. При установке ставим галочку на PATH при установке
 
-**Приобрести бота на ZkSync / LayerZero можно тут: https://t.me/swipersoft_bot**
+>![ScreenShot](https://img2.teletype.in/files/19/03/19032fbe-1912-4bf4-aed6-0f304c9bf12e.png)
 
-**DEV           : https://t.me/lang_crypto**
+3. После установки скачиваем бота, переносим все файлы в одну папку (создаете сами, в названии и пути к папке не должно быть кириллицы и пробелов)
+4. Запускаем консоль (win+r -> cmd)
+5. Пишем в консоль:
+cd /d Директория
+* Директория - путь к папке, где лежит скрипт (само название скрипта писать не нужно)
+6. Прописываем:
+pip install -r requirements.txt
+7. После установки всех библиотек командой выше, запускаем софт:
+python main.py
+
+Скрипт запустился.
