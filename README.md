@@ -28,4 +28,7 @@ RUN_THREAD_TIMEOUT = [5, 10] # отвечает за задержкой межд
 По поводу прокси. Их в целом можно и не загружать (просто файлик оставить пустым). Но осторожней, дебанк любит рейтлимитать за большое кол-во запросов / плохие прокси
 
 DEV           : https://t.me/lang_crypto
+
 With love for : https://t.me/swiper_tools
+
+Приобрести бота на ZkSync / LayerZero можно тут: https://t.me/swipersoft_bot
