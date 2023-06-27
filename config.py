@@ -22,12 +22,15 @@ autosoft = """
 |/     \|(_______)   )_(   (_______)\_______)(_______)|/          )_(   
 
 
+Channel: https://t.me/swiper_tools
+
 """
 print(autosoft)
 
 TIMEOUT = [1, 2]
-TO_MINT_BADGES = [2, 3, 4, 5, 6]
-RUN_THREAD_TIMEOUT = [5, 10]
+TO_MINT_BADGES = [1, 2, 3, 4]
+RUN_THREAD_TIMEOUT = [30, 50]
+rucaptcha_token = "ТОКЕН СЮДА ОТ https://rucaptcha.com/api-rucaptcha#intro"
 
 
 software_names = [SoftwareName.CHROME.value]

@@ -1,5 +1,5 @@
 from config import *
-
+from Modules.Captcha import CaptchaSolver
 
 
 class Account:
@@ -58,6 +58,7 @@ class Account:
                 else:
                     if response.status_code == 429:
                         logger.error(f'[{self.address} - {kwargs["url"]}] RateLimited: {response.status_code}')
+                        self.headers["user-agent"] = user_agent_rotator.get_random_user_agent()
                         time.sleep(30)
                     else:
                         logger.error(f'[{self.address} - {kwargs["url"]}] Bad status code: {response.status_code}')
@@ -76,7 +77,7 @@ class Account:
         return signed_message
     
     def login(self):
-        self.session.get("https://debank.com/")
+        self.session.get("https://debank.com/badge?t=1686927046829&r=62071")
 
         json_data = {
             'id': self.address.lower(),
@@ -98,10 +99,19 @@ class Account:
         logger.success(f'[{self.address}] Was made login to acc. Session: {self.session_id}')
 
     def mint(self, id: int):
-        json_data = {
-            'id': str(id),
-        }
         # {'_cache_seconds': 0, '_seconds': 0.02199578285217285, '_use_cache': False, 'error_code': 'mint badge failed', 'error_msg': ''}
+        solver = CaptchaSolver(
+            {
+                "api"        : rucaptcha_token,
+                "google_key" : "6LfoubcmAAAAAOa4nrHIf2O8iH4W-h91QohdhXTf",
+                "url"        : f"https://debank.com/badge/{id}"
+            }
+        )
+
+        json_data = {
+            'id'    : str(id),
+            "token" : solver.get_captcha()
+        }
         response = self.request(validate=True, url=URL + Page.MINT, json=json_data, headers=self.headers)
         
         if response["error_code"] == 0:
